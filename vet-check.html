@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="title" content="eDairy" />
+<meta name="description" content="Dairy management solution" />
+<meta name="keywords" content="eDairy, Cow, Farm, Produce, Animals, livestock" />
+<meta name="author" content="dunstuns.com" />
+<meta name="publisher" content="dunstuns.com" />
+<meta name="copyright" content="dunstuns.com" />
+<meta name="creation_Date" content="21/02/2017" />
+<meta name="expires" content="" />
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+<title>eDairy | Vet Check/ Health Records</title>
+<!--StyleSheet-->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<!--Javascript-->
+<script src="js/google.api.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+
+<body>
+<div class="wrapper">
+  <header class="mainheader">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="navbar-header page-scroll">
+            <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button"> 
+            <span class="sr-only">Toggle navigation</span> 
+            <span class="icon-bar"></span> 
+            <span class="icon-bar"></span> 
+            <span class="icon-bar"></span> 
+            </button>
+            <a class="navbar-brand mainlogo" href="animal-record-overview.html"><img alt="EDairy" src="images/edairy-logo.png"></a> </div>
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+              <li> <a href="about.html">About Us</a> </li>
+              <li> <a href="contacts.html">Contact Us</a> </li>
+              <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login</a>
+                <ul class="dropdown-menu">
+                  <div class="navbar-login">
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <form class="">
+                          <fieldset>
+                            <div class="form-group">
+                              <label class="control-label" for="name">Username:</label>
+                              <input id="name" name="name" type="text" placeholder="" class="form-control input-md" required="">
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label" for="name">Password:</label>
+                              <input id="name" name="name" type="text" placeholder="" class="form-control input-md" required="">
+                            </div>
+                            <div class="form-group">
+                              <button id="" name="" class="btn btn-primary btn-login">Sign In</button>
+                              <a href="#" class="insidemenu">Forgot Password?</a> </div>
+                          </fieldset>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <section class="searchblock">
+    <div class="container-fluid">
+      <div class="search-col">
+        <div class="col-xs-6">
+          <div class="input-group">
+            <div class="input-group-btn search-panel">
+              <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button"><span id="search_concept">Search Animal</span> <span class="caret"></span></button>
+              <ul class="dropdown-menu" role="menu">
+                <li> <a href="#contains">Contains</a> </li>
+                <li> <a href="#its_equal">It's equal</a> </li>
+                <li> <a href="#greather_than">Greather than &gt;</a> </li>
+                <li> <a href="#less_than">Less than &lt;</a> </li>
+                <li class="divider"></li>
+                <li> <a href="#all">Anything</a> </li>
+              </ul>
+            </div>
+            <input id="search_param" name="search_param" type="hidden" value="all">
+            <input class="form-control" name="x" placeholder="" type="text">
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div class="input-group">
+            <div class="input-group-btn search-panel">
+              <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button"><span id="search_concept">Search Type</span> <span class="caret"></span></button>
+              <ul class="dropdown-menu" role="menu">
+                <li> <a href="#contains">Contains</a> </li>
+                <li> <a href="#its_equal">It's equal</a> </li>
+                <li> <a href="#greather_than">Greather than &gt;</a> </li>
+                <li> <a href="#less_than">Less than &lt;</a> </li>
+                <li class="divider"></li>
+                <li> <a href="#all">Anything</a> </li>
+              </ul>
+            </div>
+            <input id="search_param" name="search_param" type="hidden" value="all">
+            <input class="form-control" name="x" placeholder="" type="text">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="contentwrapper">
+    <div class="container-fluid">
+      <div class="row"> 
+        <!--sidebar-menu-->
+        <aside class="sidebar">
+          <ul>
+            <li> <a href="animal-record.html">Animal Record</a> </li>
+            <li class="active"> <a href="vet-check.html">Vet Check/ Health Records</a> </li>
+            <li> <a href="farm-management.html">Farm Managment</a> </li>
+            <li> <a href="management.html">Management</a> </li>
+          </ul>
+        </aside>
+        <!--sidebar-menu-->
+        <aside class="contentarea">
+          <div class="col-lg-12">
+            <div class="panel tabpanel">
+              <div class="panel-heading tabheader" id="syllabus">
+                <div class="tabheadwrap">
+                  <ul class="nav nav-tabs" id="myTab">
+                    <li> <a data-toggle="tab" href="#recentchecks">Recent checks</a> </li>
+                    <li> <a data-toggle="tab" href="#addrecord">Add record</a> </li>
+                    <li class="active"> <a data-toggle="tab" href="#vetsummary">Vet Summary</a> </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="panel-body">
+                <div class="tab-content" id="myTabContent"> 
+                  <!-- Recent checks -->
+                  <div class="tab-pane fade" id="recentchecks">
+                    <div class="row">
+                      <div class="maintitle">
+                        <h2><span>Results for:</span> Daisy</h2>
+                      </div>
+                      <div class="row forminside">
+                        <div class="col-sm-9">
+                          <div class="tableBlock">
+                            <table class="table table-striped">
+                              <thead>
+                                <tr>
+                                  <th>Recent Checks</th>
+                                  <th>Animal Tag Number</th>
+                                  <th>Status</th>
+                                  <th>Diagnosis</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>23/12/2017</td>
+                                  <td>10</td>
+                                  <td><label class="red label-color" for="red"></label></td>
+                                  <td>Lorem ipsum dolor sit amet, conse</td>
+                                </tr>
+                                <tr>
+                                  <td>23/12/2017</td>
+                                  <td>03</td>
+                                  <td><label class="green label-color" for="green"></label></td>
+                                  <td>Mastitis</td>
+                                </tr>
+                                <tr>
+                                  <td>23/12/2017</td>
+                                  <td>22</td>
+                                  <td><label class="green label-color" for="green"></label></td>
+                                  <td>Lorem ipsum dolor sit amet, conse</td>
+                                </tr>
+                                <tr>
+                                  <td>23/12/2017</td>
+                                  <td>111</td>
+                                  <td><label class="yellow label-color" for="yellow"></label></td>
+                                  <td>Mastitis</td>
+                                </tr>
+                                <tr>
+                                  <td>23/12/2017</td>
+                                  <td>03</td>
+                                  <td><label class="green label-color" for="green"></label></td>
+                                  <td>Mastitis</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                        <div class="col-sm-3">
+                          <div class="col-sm-6 picupload">
+                            <div class="Imgsmall"><img alt="" src="images/edairy-cowpic-small.jpg"></div>
+                          </div>
+                          <div class="col-sm-6 picupload">
+                            <div class="Imgsmall"><img alt="" src="images/edairy-cowpic-small.jpg"></div>
+                          </div>
+                          <div class="col-sm-6 picupload">
+                            <div class="Imgsmall"><img alt="" src="images/edairy-cowpic-small.jpg"></div>
+                          </div>
+                          <div class="col-sm-6 picupload">
+                            <div class="Imgsmall"><img alt="" src="images/edairy-cowpic-small.jpg"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class="row">
+                          <div class="col-sm-9 formexports">
+                            <div class="control-group">
+                              <div class="noPadding">
+                                <label class="col-sm-3 noPadding control-label">Date</label>
+                                <div class="controls noPadding col-sm-4">
+                                  <div class="input-group date" data-provide="datepicker">
+                                    <input class="form-control" placeholder="Month | Day | Year" type="text">
+                                    <div class="input-group-addon"> <span class="glyphicon glyphicon-calendar"></span> </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="control-group">
+                              <label class="col-sm-3 noPadding control-label">Animal Tag Number</label>
+                              <div class="controls noPadding col-sm-4">
+                                <select class="input-control" name="state">
+                                  <option value=""> Tag Number </option>
+                                  <option value=""> 1 </option>
+                                  <option value=""> 2 </option>
+                                  <option value=""> 3 </option>
+                                  <option value=""> 4 </option>
+                                  <option value=""> 5 </option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="control-group">
+                              <label class="col-sm-3 noPadding control-label">Add Animal Issues</label>
+                              <div class="controls noPadding col-sm-4">
+                                <input class="input-control" placeholder="issues" type="text">
+                              </div>
+                            </div>
+                            <div class="control-group">
+                              <label class="col-sm-3 noPadding control-label">Diagnosis</label>
+                              <div class="controls noPadding col-sm-6">
+                                <div class="col-xs-4 colorBlock">
+                                  <label class="red label-color" for="red"><span>Danger</span></label>
+                                  <input checked id="red" name="color" type="radio" value="">
+                                </div>
+                                <div class="col-xs-4 colorBlock">
+                                  <label class="yellow label-color" for="yellow"><span>Mordarate</span></label>
+                                  <input id="yellow" name="color" type="radio" value="">
+                                </div>
+                                <div class="col-xs-4 colorBlock">
+                                  <label class="green label-color" for="green"><span>Resolved</span></label>
+                                  <input id="green" name="color" type="radio" value="">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="control-group">
+                              <label class="col-sm-3 noPadding control-label">Recomended Medication</label>
+                              <div class="controls noPadding col-sm-4">
+                                <input class="input-control" placeholder="" type="text">
+                              </div>
+                              <label class="col-sm-2 control-label">Cost</label>
+                              <div class="controls noPadding col-sm-3">
+                                <input class="input-control" placeholder="" type="text">
+                              </div>
+                            </div>
+                            <div class="control-group">
+                              <label class="col-sm-3 noPadding control-label">Vet name and number</label>
+                              <div class="controls noPadding col-sm-4">
+                                <select class="input-control" name="state">
+                                  <option value=""> Vet Name/Number </option>
+                                  <option value=""> 1 </option>
+                                  <option value=""> 2 </option>
+                                  <option value=""> 3 </option>
+                                  <option value=""> 4 </option>
+                                  <option value=""> 5 </option>
+                                </select>
+                              </div>
+                              <div class="col-sm-3">
+                                <button class="btn btnBordered">Add New Vet</button>
+                              </div>
+                            </div>
+                            <div class="control-group">
+                              <label class="col-sm-3 noPadding control-label">Proposed Next Visted</label>
+                              <div class="controls noPadding col-sm-4">
+                                <div class="input-group date" data-provide="datepicker">
+                                  <input class="form-control" placeholder="Month | Day | Year" type="text">
+                                  <div class="input-group-addon"> <span class="glyphicon glyphicon-calendar"></span> </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="submitarea">
+                              <button class="btn btnBordered">Submit</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End Recent checks --> 
+                  <!-- Add Records -->
+                  <div class="tab-pane fade" id="addrecord">
+                    <div class="row">
+                      <div class="maintitle">
+                        <h2><span>Results for:</span> Daisy</h2>
+                      </div>
+                      <div class="col-lg-12">
+                        <div class="row">
+                          <div class="col-sm-9 formexports topformexports">
+                            <div class="control-group">
+                              <div class="noPadding">
+                                <label class="col-sm-3 noPadding control-label">Day Visted</label>
+                                <div class="controls noPadding col-sm-4">
+                                  <div class="input-group date" data-provide="datepicker">
+                                    <input class="form-control" placeholder="Month | Day | Year" type="text">
+                                    <div class="input-group-addon"> <span class="glyphicon glyphicon-calendar"></span> </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="control-group">
+                              <label class="col-sm-3 noPadding control-label">Animal Tag Number</label>
+                              <div class="controls noPadding col-sm-4">
+                                <select class="input-control" name="state">
+                                  <option value=""> Tag Number </option>
+                                  <option value=""> 1 </option>
+                                  <option value=""> 2 </option>
+                                  <option value=""> 3 </option>
+                                  <option value=""> 4 </option>
+                                  <option value=""> 5 </option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="control-group">
+                              <label class="col-sm-3 noPadding control-label">Add Animal Issues</label>
+                              <div class="controls noPadding col-sm-4">
+                                <input class="input-control" placeholder="issues" type="text">
+                              </div>
+                            </div>
+                            <div class="control-group">
+                              <label class="col-sm-3 noPadding control-label">Diagnosis</label>
+                              <div class="controls noPadding col-sm-6">
+                                <div class="col-xs-4 colorBlock">
+                                  <label class="red label-color" for="red"><span>Danger</span></label>
+                                  <input checked id="red" name="color" type="radio" value="">
+                                </div>
+                                <div class="col-xs-4 colorBlock">
+                                  <label class="yellow label-color" for="yellow"><span>Mordarate</span></label>
+                                  <input id="yellow" name="color" type="radio" value="">
+                                </div>
+                                <div class="col-xs-4 colorBlock">
+                                  <label class="green label-color" for="green"><span>Resolved</span></label>
+                                  <input id="green" name="color" type="radio" value="">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="control-group">
+                              <label class="col-sm-3 noPadding control-label">Recomended Medication</label>
+                              <div class="controls noPadding col-sm-4">
+                                <input class="input-control" placeholder="" type="text">
+                              </div>
+                              <label class="col-sm-2 control-label">Cost</label>
+                              <div class="controls noPadding col-sm-3">
+                                <input class="input-control" placeholder="" type="text">
+                              </div>
+                            </div>
+                            <div class="control-group">
+                              <label class="col-sm-3 noPadding control-label">Vet name and number</label>
+                              <div class="controls noPadding col-sm-4">
+                                <select class="input-control" name="state">
+                                  <option value=""> Vet Name/Number </option>
+                                  <option value=""> 1 </option>
+                                  <option value=""> 2 </option>
+                                  <option value=""> 3 </option>
+                                  <option value=""> 4 </option>
+                                  <option value=""> 5 </option>
+                                </select>
+                              </div>
+                              <div class="col-sm-3">
+                                <button class="btn btnBordered">Add New Vet</button>
+                              </div>
+                            </div>
+                            <div class="control-group">
+                              <label class="col-sm-3 noPadding control-label">Proposed Next Visted</label>
+                              <div class="controls noPadding col-sm-4">
+                                <div class="input-group date" data-provide="datepicker">
+                                  <input class="form-control" placeholder="Month | Day | Year" type="text">
+                                  <div class="input-group-addon"> <span class="glyphicon glyphicon-calendar"></span> </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="submitarea">
+                              <button class="btn btnBordered">Submit</button>
+                            </div>
+                          </div>
+                          <div class="col-sm-3">
+                            <div class="col-sm-6 picupload">
+                              <div class="Imgsmall"><img alt="" src="images/edairy-cowpic-small.jpg"></div>
+                            </div>
+                            <div class="col-sm-6 picupload">
+                              <div class="Imgsmall"><img alt="" src="images/edairy-cowpic-small.jpg"></div>
+                            </div>
+                            <div class="col-sm-6 picupload">
+                              <div class="Imgsmall"><img alt="" src="images/edairy-cowpic-small.jpg"></div>
+                            </div>
+                            <div class="col-sm-6 picupload">
+                              <div class="Imgsmall"><img alt="" src="images/edairy-cowpic-small.jpg"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row forminside">
+                      <div class="col-sm-9">
+                        <div class="tableBlock">
+                          <table class="table table-striped">
+                            <thead>
+                              <tr>
+                                <th>Recent Checks</th>
+                                <th>Animal Tag Number</th>
+                                <th>Status</th>
+                                <th>Diagnosis</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>23/12/2017</td>
+                                <td>10</td>
+                                <td><label class="red label-color" for="red"></label></td>
+                                <td>Lorem ipsum dolor sit amet, conse</td>
+                              </tr>
+                              <tr>
+                                <td>23/12/2017</td>
+                                <td>03</td>
+                                <td><label class="green label-color" for="green"></label></td>
+                                <td>Mastitis</td>
+                              </tr>
+                              <tr>
+                                <td>23/12/2017</td>
+                                <td>22</td>
+                                <td><label class="green label-color" for="green"></label></td>
+                                <td>Lorem ipsum dolor sit amet, conse</td>
+                              </tr>
+                              <tr>
+                                <td>23/12/2017</td>
+                                <td>111</td>
+                                <td><label class="yellow label-color" for="yellow"></label></td>
+                                <td>Mastitis</td>
+                              </tr>
+                              <tr>
+                                <td>23/12/2017</td>
+                                <td>03</td>
+                                <td><label class="green label-color" for="green"></label></td>
+                                <td>Mastitis</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--  End Add Records --> 
+                  <!--  Vet Summary -->
+                  <div class="tab-pane fade in active" id="vetsummary">
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class="formexports topformexports">
+                          <div class="row">
+                            <div class="col-sm-9">
+                              <div class="row">
+                                <div class="control-group">
+                                  <div class="controls noPadding col-sm-6">
+                                    <select class="input-control" name="state">
+                                      <option value=""> Select Vet </option>
+                                      <option value=""> 1 </option>
+                                      <option value=""> 2 </option>
+                                      <option value=""> 3 </option>
+                                      <option value=""> 4 </option>
+                                      <option value=""> 5 </option>
+                                    </select>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row vetchartarea">
+                                <div class="row">
+                                  <div class="col-md-6 noPadding">
+                                    <div class="chatsingle chatsingleDark">
+                                      <div class="piechatarea" id="piechart"></div>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-6 noPadding">
+                                    <div class="chatsingle chatsingleLight">
+                                      <div class="piechatarea" id="piechart_2"></div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row vet-pricearea">
+                                <div class="col-sm-4"> <span>Cost to farm</span> <strong>Ksh 34, 000</strong> </div>
+                                <div class="col-sm-4"> <span>Medication cost</span> <strong>Ksh 23, 000</strong> </div>
+                                <div class="col-sm-4"> <span>Number of visits</span> <strong>10</strong> </div>
+                              </div>
+                              <div class="row vetend-results">
+                                <div class="row">
+                                  <div class="col-sm-6">
+                                    <div class="vetfinal-input"> <strong>Danger (20) | Moderate (15) | Resolved (10)</strong> </div>
+                                  </div>
+                                  <div class="col-sm-6">
+                                    <div class="control-group">
+                                      <div class="controls">
+                                        <div class="input-group date" data-provide="datepicker">
+                                          <input class="form-control" placeholder="Month | Day | Year" type="text">
+                                          <div class="input-group-addon"> <span class="glyphicon glyphicon-calendar"></span> </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-sm-9">
+                              <div class="row forminside">
+                                <div class="tableBlock">
+                                  <table class="table table-striped">
+                                    <thead>
+                                      <tr>
+                                        <th>Recent Checks</th>
+                                        <th>Animal Tag Number</th>
+                                        <th>Status</th>
+                                        <th>Diagnosis</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>23/12/2017</td>
+                                        <td>10</td>
+                                        <td><label class="red label-color" for="red"></label></td>
+                                        <td>Lorem ipsum dolor sit amet, conse</td>
+                                      </tr>
+                                      <tr>
+                                        <td>23/12/2017</td>
+                                        <td>03</td>
+                                        <td><label class="green label-color" for="green"></label></td>
+                                        <td>Mastitis</td>
+                                      </tr>
+                                      <tr>
+                                        <td>23/12/2017</td>
+                                        <td>22</td>
+                                        <td><label class="green label-color" for="green"></label></td>
+                                        <td>Lorem ipsum dolor sit amet, conse</td>
+                                      </tr>
+                                      <tr>
+                                        <td>23/12/2017</td>
+                                        <td>111</td>
+                                        <td><label class="yellow label-color" for="yellow"></label></td>
+                                        <td>Mastitis</td>
+                                      </tr>
+                                      <tr>
+                                        <td>23/12/2017</td>
+                                        <td>03</td>
+                                        <td><label class="green label-color" for="green"></label></td>
+                                        <td>Mastitis</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!--  End  Vet Summary --> 
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+  <footer class="mainfooter">
+    <div class="container-fluid">
+      <p>EDairy Copyright</p>
+    </div>
+  </footer>
+</div>
+
+<!-- jQuery --> 
+<script src="js/jquery.js"></script> 
+<script src="js/jquery.dataTable.js"></script> 
+<script src="js/main.js"></script> 
+<script>
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+function drawChart() {
+
+  var data = google.visualization.arrayToDataTable([
+    ['Task', 'Hours per Day'],
+    ['Unresolved',    6],
+    ['Resolved',     19]
+  ]);
+
+  var options = {
+    title: ''
+  };
+
+  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+  chart.draw(data, options);
+}  
+</script> 
+<script>
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+function drawChart() {
+
+  var data = google.visualization.arrayToDataTable([
+    ['Task', 'Hours per Day'],
+    ['Resolved',     5],
+    ['Not Known',     8],
+    ['Unresolved',    12]
+  ]);
+
+  var options = {
+    title: ''
+  };
+
+  var chart = new google.visualization.PieChart(document.getElementById('piechart_2'));
+
+  chart.draw(data, options);
+}    
+</script>
+</body>
+</html>

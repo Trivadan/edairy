@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="title" content="eDairy" />
+<meta name="description" content="Dairy management solution" />
+<meta name="keywords" content="eDairy, Cow, Farm, Produce, Animals, livestock" />
+<meta name="author" content="dunstuns.com" />
+<meta name="publisher" content="dunstuns.com" />
+<meta name="copyright" content="dunstuns.com" />
+<meta name="creation_Date" content="21/02/2017" />
+<meta name="expires" content="" />
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+<title>eDairy | Farm Management</title>
+<!--StyleSheet-->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<!--Javascript-->
+<script src="js/google.api.js"></script>
+</head>
+
+<body>
+<div class="wrapper">
+  <header class="mainheader">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="navbar-header page-scroll">
+            <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button"> 
+            <span class="sr-only">Toggle navigation</span> 
+            <span class="icon-bar"></span> 
+            <span class="icon-bar"></span> 
+            <span class="icon-bar"></span> 
+            </button>
+            <a class="navbar-brand mainlogo" href="animal-record-overview.html"><img alt="EDairy" src="images/edairy-logo.png"></a> </div>
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+              <li> <a href="about.html">About Us</a> </li>
+              <li> <a href="contacts.html">Contact Us</a> </li>
+              <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login</a>
+                <ul class="dropdown-menu">
+                  <div class="navbar-login">
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <form class="">
+                          <fieldset>
+                            <div class="form-group">
+                              <label class="control-label" for="name">Username:</label>
+                              <input id="name" name="name" type="text" placeholder="" class="form-control input-md" required="">
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label" for="name">Password:</label>
+                              <input id="name" name="name" type="text" placeholder="" class="form-control input-md" required="">
+                            </div>
+                            <div class="form-group">
+                              <button id="" name="" class="btn btn-primary btn-login">Sign In</button>
+                              <a href="#" class="insidemenu">Forgot Password?</a> </div>
+                          </fieldset>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <section class="searchblock">
+    <div class="container-fluid">
+      <div class="search-col">
+        <div class="col-xs-6">
+          <div class="input-group">
+            <div class="input-group-btn search-panel">
+              <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button"><span id="search_concept">Search Animal</span> <span class="caret"></span></button>
+              <ul class="dropdown-menu" role="menu">
+                <li> <a href="#contains">Contains</a> </li>
+                <li> <a href="#its_equal">It's equal</a> </li>
+                <li> <a href="#greather_than">Greather than &gt;</a> </li>
+                <li> <a href="#less_than">Less than &lt;</a> </li>
+                <li class="divider"></li>
+                <li> <a href="#all">Anything</a> </li>
+              </ul>
+            </div>
+            <input id="search_param" name="search_param" type="hidden" value="all">
+            <input class="form-control" name="x" placeholder="" type="text">
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div class="input-group">
+            <div class="input-group-btn search-panel">
+              <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button"><span id="search_concept">Search Type</span> <span class="caret"></span></button>
+              <ul class="dropdown-menu" role="menu">
+                <li> <a href="#contains">Contains</a> </li>
+                <li> <a href="#its_equal">It's equal</a> </li>
+                <li> <a href="#greather_than">Greather than &gt;</a> </li>
+                <li> <a href="#less_than">Less than &lt;</a> </li>
+                <li class="divider"></li>
+                <li> <a href="#all">Anything</a> </li>
+              </ul>
+            </div>
+            <input id="search_param" name="search_param" type="hidden" value="all">
+            <input class="form-control" name="x" placeholder="" type="text">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="contentwrapper">
+    <div class="container-fluid">
+      <div class="row"> 
+        <!--sidebar-menu-->
+        <aside class="sidebar">
+          <ul>
+            <li> <a href="animal-record.html">Animal Record</a> </li>
+            <li> <a href="vet-check.html">Vet Check/ Health Records</a> </li>
+            <li  class="active"><a href="farm-management.html">Farm Managment</a> </li>
+            <li> <a href="management.html">Management</a> </li>
+          </ul>
+        </aside>
+        <!--sidebar-menu-->
+        <aside class="contentarea">
+          <div class="col-lg-12">
+            <div class="panel tabpanel">
+              <div class="panel-heading tabheader" id="syllabus">
+                <div class="tabheadwrap">
+                  <ul class="nav nav-tabs" id="myTab">
+                    <li class="active"><a data-toggle="tab" href="#planting">Plating</a> </li>
+                    <li> <a data-toggle="tab" href="#fomularfeeds">Fomular feeds</a> </li>
+                    <li> <a data-toggle="tab" href="#profit-loss">Profit/Loss</a> </li>
+                    <li> <a data-toggle="tab" href="#usergroup">User groups</a> </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="panel-body">
+                <div class="tab-content" id="myTabContent"> 
+                  <!-- Plating -->
+                  <div class="tab-pane fade in active" id="planting">
+                    <div class="row">
+                      <div class="maintitle">
+                        <h3>Add planting Records</h3>
+                      </div>
+                      <div class="farmBlock">
+                        <div class="col-lg-11">
+                          <div class="row noPadding col-sm-8">
+                            <div class="control-group">
+                              <div class="controls">
+                                <select class="input-control" name="state">
+                                  <option value=""> Select Farm </option>
+                                  <option value=""> 1 </option>
+                                  <option value=""> 2 </option>
+                                  <option value=""> 3 </option>
+                                  <option value=""> 4 </option>
+                                  <option value=""> 5 </option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row col-sm-10">
+                            <div class="control-group">
+                              <div class="noPadding">
+                                <label class="col-sm-3 noPadding control-label">Date</label>
+                                <div class="controls noPadding col-sm-7">
+                                  <div class="input-group date" data-provide="datepicker">
+                                    <input class="form-control" placeholder="Month | Day | Year" type="text">
+                                    <div class="input-group-addon"> <span class="glyphicon glyphicon-calendar"></span> </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="control-group">
+                              <div class="noPadding">
+                                <label class="col-sm-3 noPadding control-label">Add Product</label>
+                                <div class="controls noPadding col-sm-7">
+                                  <input class="input-control" placeholder="eg-DCP, Seed" type="text">
+                                </div>
+                                <div class="col-sm-2">
+                                  <div class="controls">
+                                    <input class="input-control" placeholder="Cost" type="text">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="control-group">
+                              <div class="noPadding">
+                                <label class="col-sm-3 noPadding control-label"></label>
+                                <div class="controls noPadding col-sm-7">
+                                  <input class="input-control" placeholder="eg-DCP, Seed" type="text">
+                                </div>
+                                <div class="col-sm-2">
+                                  <div class="controls">
+                                    <input class="input-control" placeholder="Cost" type="text">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="control-group">
+                              <div class="noPadding">
+                                <label class="col-sm-3 noPadding control-label"></label>
+                                <div class="controls noPadding col-sm-7"> <span class="controltext">Click to add more flieds</span>
+                                  <button class="btn btnBordered">Add Field</button>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="control-group">
+                              <div class="noPadding">
+                                <label class="col-sm-3 noPadding control-label">Date</label>
+                                <div class="controls noPadding col-sm-7">
+                                  <div class="input-group date" data-provide="datepicker">
+                                    <input class="form-control" placeholder="Month | Day | Year" type="text">
+                                    <div class="input-group-addon"> <span class="glyphicon glyphicon-calendar"></span> </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="control-group">
+                              <div class="noPadding">
+                                <label class="col-sm-3 noPadding control-label">Add Product</label>
+                                <div class="controls noPadding col-sm-7">
+                                  <input class="input-control" placeholder="eg-DCP, Seed" type="text">
+                                </div>
+                                <div class="col-sm-2">
+                                  <div class="controls">
+                                    <input class="input-control" placeholder="Cost" type="text">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="control-group">
+                              <div class="noPadding">
+                                <label class="col-sm-3 noPadding control-label"></label>
+                                <div class="controls noPadding col-sm-7">
+                                  <input class="input-control" placeholder="eg-DCP, Seed" type="text">
+                                </div>
+                                <div class="col-sm-2">
+                                  <div class="controls">
+                                    <input class="input-control" placeholder="Cost" type="text">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="control-group">
+                              <div class="noPadding">
+                                <label class="col-sm-3 noPadding control-label"></label>
+                                <div class="controls noPadding col-sm-7"> <span class="controltext">Click to add more flieds</span>
+                                  <button class="btn btnBordered">Add Field</button>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="control-group">
+                              <div class="noPadding">
+                                <label class="col-sm-3 noPadding control-label">Set up a reminder</label>
+                                <div class="controls noPadding col-sm-7">
+                                  <div class="input-group date" data-provide="datepicker">
+                                    <input class="form-control" placeholder="Month | Day | Year" type="text">
+                                    <div class="input-group-addon"> <span class="glyphicon glyphicon-calendar"></span> </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="control-group">
+                              <div class="noPadding">
+                                <label class="col-sm-3 noPadding control-label">Total cost to farm</label>
+                                <div class="controls noPadding col-sm-7">
+                                  <input class="input-control" placeholder="Cost" type="text">
+                                </div>
+                                <div class="col-sm-2">
+                                  <div class="controls">
+                                    <input class="input-control" placeholder="Cost" type="text">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="submitarea">
+                              <button class="btn btnBordered">Submit</button>
+                            </div>
+                            <div class="upload-block">
+                              <div class="col-sm-6 upload-blockitem">
+                                <div class="input-group image-preview">
+                                  <input type="text" class="form-control image-preview-filename" disabled="disabled">
+                                  <span class="input-group-btn">
+                                  <button type="button" class="btn btn-default image-preview-clear" style="display:none;"> <span class="glyphicon glyphicon-remove"></span> Clear </button>
+                                  <div class="btn btn-default image-preview-input"> <span class="image-preview-input-title">Upload file</span>
+                                    <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/>
+                                    <!-- rename it --> 
+                                  </div>
+                                  </span> </div>
+                              </div>
+                              <div class="col-sm-6 upload-blockitem">
+                                <div class="input-group image-preview">
+                                  <input type="text" class="form-control image-preview-filename" disabled="disabled">
+                                  <span class="input-group-btn">
+                                  <button type="button" class="btn btn-default image-preview-clear" style="display:none;"> <span class="glyphicon glyphicon-remove"></span> Clear </button>
+                                  <div class="btn btn-default image-preview-input"> <span class="image-preview-input-title">Upload file</span>
+                                    <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/>
+                                    <!-- rename it --> 
+                                  </div>
+                                  </span> </div>
+                              </div>
+                              <div class="col-sm-6 upload-blockitem">
+                                <div class="input-group image-preview">
+                                  <input type="text" class="form-control image-preview-filename" disabled="disabled">
+                                  <span class="input-group-btn">
+                                  <button type="button" class="btn btn-default image-preview-clear" style="display:none;"> <span class="glyphicon glyphicon-remove"></span> Clear </button>
+                                  <div class="btn btn-default image-preview-input"> <span class="image-preview-input-title">Upload file</span>
+                                    <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/>
+                                    <!-- rename it --> 
+                                  </div>
+                                  </span> </div>
+                              </div>
+                              <div class="col-sm-6 upload-blockitem">
+                                <div class="input-group image-preview">
+                                  <input type="text" class="form-control image-preview-filename" disabled="disabled">
+                                  <span class="input-group-btn">
+                                  <button type="button" class="btn btn-default image-preview-clear" style="display:none;"> <span class="glyphicon glyphicon-remove"></span> Clear </button>
+                                  <div class="btn btn-default image-preview-input"> <span class="image-preview-input-title">Upload file</span>
+                                    <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/>
+                                    <!-- rename it --> 
+                                  </div>
+                                  </span> </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End Plating --> 
+                  <!-- Fomular feeds -->
+                  <div class="tab-pane fade" id="fomularfeeds">
+                    <div class="row">
+                      <div class="maintitle">
+                        <h3>Add formula feeds records</h3>
+                      </div>
+                      <div class="farmBlock">
+                        <div class="col-lg-11">
+                          <div class="row noPadding col-sm-8">
+                            <div class="control-group">
+                              <div class="controls">
+                                <select class="input-control" name="state">
+                                  <option value=""> Select Farm </option>
+                                  <option value=""> 1 </option>
+                                  <option value=""> 2 </option>
+                                  <option value=""> 3 </option>
+                                  <option value=""> 4 </option>
+                                  <option value=""> 5 </option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row col-sm-10">
+                            <div class="control-group">
+                              <div class="noPadding">
+                                <label class="col-sm-3 noPadding control-label">Date</label>
+                                <div class="controls noPadding col-sm-7">
+                                  <div class="input-group date" data-provide="datepicker">
+                                    <input class="form-control" placeholder="Month | Day | Year" type="text">
+                                    <div class="input-group-addon"> <span class="glyphicon glyphicon-calendar"></span> </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="control-group">
+                              <div class="noPadding">
+                                <label class="col-sm-3 noPadding control-label">Upload food formula</label>
+                                <div class="controls noPadding col-sm-7">
+                                  <div class="upload-blockitem upload-blockitem_2">
+                                    <div class="input-group image-preview">
+                                      <input type="text" class="form-control image-preview-filename" disabled="disabled">
+                                      <span class="input-group-btn">
+                                      <button type="button" class="btn btn-default image-preview-clear" style="display:none;"> <span class="glyphicon glyphicon-remove"></span> Clear </button>
+                                      <div class="btn btn-default image-preview-input"> <span class="image-preview-input-title">Upload file</span>
+                                        <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/>
+                                        <!-- rename it --> 
+                                      </div>
+                                      </span> </div>
+                                  </div>
+                                </div>
+                                <div class="col-sm-2">
+                                  <div class="controls">
+                                    <p>Upload excel or word document</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="control-group">
+                              <div class="noPadding">
+                                <label class="col-sm-3 noPadding control-label">Add Ingredients</label>
+                                <div class="controls noPadding col-sm-7">
+                                  <input class="input-control" placeholder="eg-Cotton seed cake" type="text">
+                                </div>
+                                <div class="col-sm-2">
+                                  <div class="controls">
+                                    <input class="input-control" placeholder="Amount" type="text">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="control-group">
+                              <div class="noPadding">
+                                <label class="col-sm-3 noPadding control-label"></label>
+                                <div class="controls noPadding col-sm-7">
+                                  <input class="input-control" placeholder="eg-Sunflower meal" type="text">
+                                </div>
+                                <div class="col-sm-2">
+                                  <div class="controls">
+                                    <input class="input-control" placeholder="Amount" type="text">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="control-group">
+                              <div class="noPadding">
+                                <label class="col-sm-3 noPadding control-label"></label>
+                                <div class="controls noPadding col-sm-7"> <span class="controltext">Click to add more flieds</span>
+                                  <button class="btn btnBordered">Add Field</button>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="control-group">
+                              <div class="noPadding">
+                                <label class="col-sm-3 noPadding control-label">Contingencies</label>
+                                <div class="controls noPadding col-sm-7">
+                                  <input class="input-control" placeholder="eg-Causal labour" type="text">
+                                </div>
+                                <div class="col-sm-2">
+                                  <div class="controls">
+                                    <input class="input-control" placeholder="Cost" type="text">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="control-group">
+                              <div class="noPadding">
+                                <label class="col-sm-3 noPadding control-label"></label>
+                                <div class="controls noPadding col-sm-7"> <span class="controltext">Click to add more flieds</span>
+                                  <button class="btn btnBordered">Add Field</button>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="control-group">
+                              <div class="noPadding">
+                                <label class="col-sm-3 noPadding control-label">Set up a reminder</label>
+                                <div class="controls noPadding col-sm-7">
+                                  <div class="input-group date" data-provide="datepicker">
+                                    <input class="form-control" placeholder="Month | Day | Year" type="text">
+                                    <div class="input-group-addon"> <span class="glyphicon glyphicon-calendar"></span> </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="control-group">
+                              <div class="noPadding">
+                                <label class="col-sm-3 noPadding control-label">Total cost to farm</label>
+                                <div class="controls noPadding col-sm-7">
+                                  <input class="input-control" placeholder="Cost" type="text">
+                                </div>
+                                <div class="col-sm-2">
+                                  <div class="controls">
+                                    <input class="input-control" placeholder="Cost" type="text">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="submitarea">
+                              <button class="btn btnBordered">Submit</button>
+                            </div>
+                            <div class="upload-block">
+                              <h3>Adding supporting documents / reciepts</h3>
+                              <div class="col-sm-6 upload-blockitem">
+                                <div class="input-group image-preview">
+                                  <input type="text" class="form-control image-preview-filename" disabled="disabled">
+                                  <span class="input-group-btn">
+                                  <button type="button" class="btn btn-default image-preview-clear" style="display:none;"> <span class="glyphicon glyphicon-remove"></span> Clear </button>
+                                  <div class="btn btn-default image-preview-input"> <span class="image-preview-input-title">Upload file</span>
+                                    <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/>
+                                    <!-- rename it --> 
+                                  </div>
+                                  </span> </div>
+                              </div>
+                              <div class="col-sm-6 upload-blockitem">
+                                <div class="input-group image-preview">
+                                  <input type="text" class="form-control image-preview-filename" disabled="disabled">
+                                  <span class="input-group-btn">
+                                  <button type="button" class="btn btn-default image-preview-clear" style="display:none;"> <span class="glyphicon glyphicon-remove"></span> Clear </button>
+                                  <div class="btn btn-default image-preview-input"> <span class="image-preview-input-title">Upload file</span>
+                                    <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/>
+                                    <!-- rename it --> 
+                                  </div>
+                                  </span> </div>
+                              </div>
+                              <div class="col-sm-6 upload-blockitem">
+                                <div class="input-group image-preview">
+                                  <input type="text" class="form-control image-preview-filename" disabled="disabled">
+                                  <span class="input-group-btn">
+                                  <button type="button" class="btn btn-default image-preview-clear" style="display:none;"> <span class="glyphicon glyphicon-remove"></span> Clear </button>
+                                  <div class="btn btn-default image-preview-input"> <span class="image-preview-input-title">Upload file</span>
+                                    <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/>
+                                    <!-- rename it --> 
+                                  </div>
+                                  </span> </div>
+                              </div>
+                              <div class="col-sm-6 upload-blockitem">
+                                <div class="input-group image-preview">
+                                  <input type="text" class="form-control image-preview-filename" disabled="disabled">
+                                  <span class="input-group-btn">
+                                  <button type="button" class="btn btn-default image-preview-clear" style="display:none;"> <span class="glyphicon glyphicon-remove"></span> Clear </button>
+                                  <div class="btn btn-default image-preview-input"> <span class="image-preview-input-title">Upload file</span>
+                                    <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/>
+                                    <!-- rename it --> 
+                                  </div>
+                                  </span> </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--  End Fomular feeds --> 
+                  <!-- Profit/Loss -->
+                  <div class="tab-pane fade" id="profit-loss">
+                    <div class="row">
+                      <div class="maintitle">
+                        <h3>Income and expenditure</h3>
+                      </div>
+                      <div class="farmBlock">
+                        <div class="col-sm-9">
+                          <div class="control-group">
+                            <label class="col-sm-3 noPadding control-label">Select month</label>
+                            <div class="controls noPadding col-sm-6">
+                              <div class="input-group date" data-provide="datepicker">
+                                <input class="form-control" placeholder="Month | Day | Year" type="text">
+                                <div class="input-group-addon"> <span class="glyphicon glyphicon-calendar"></span> </div>
+                              </div>
+                            </div>
+                            <div class="col-sm-3">
+                              <button class="btn btn-noMargin btnBordered">Export Record</button>
+                            </div>
+                          </div>
+                          <div class="calctable">
+                            <div class="col-sm-6 noPadding tableIncome">
+                              <table class="table table-bordered">
+                                <tbody>
+                                  <tr>
+                                    <th colspan="2">Income</th>
+                                  </tr>
+                                  <tr>
+                                    <td>Co-operative milk Sales</td>
+                                    <td>40, 000</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Water Sales</td>
+                                    <td>6, 000</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Manure Sales</td>
+                                    <td>30, 000</td>
+                                  </tr>
+                                  <tr>
+                                    <td></td>
+                                    <td></td>
+                                  </tr>
+                                  <tr>
+                                    <td></td>
+                                    <td></td>
+                                  </tr>
+                                  <tr>
+                                    <td></td>
+                                    <td></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Monthly Income</td>
+                                    <td>67, 000</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                            <div class="col-sm-6 noPadding tableExpend">
+                              <table class="table table-bordered">
+                                <tbody>
+                                  <tr>
+                                    <th colspan="2">Expenditure</th>
+                                  </tr>
+                                  <tr>
+                                    <td>Salaries</td>
+                                    <td>10, 000</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Vet-Tag 1234-Vet Name</td>
+                                    <td>700</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Vet production</td>
+                                    <td>25, 000</td>
+                                  </tr>
+                                  <tr>
+                                    <td></td>
+                                    <td></td>
+                                  </tr>
+                                  <tr>
+                                    <td></td>
+                                    <td></td>
+                                  </tr>
+                                  <tr>
+                                    <td></td>
+                                    <td></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Monthly Income</td>
+                                    <td>37, 500</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                          <div class="calcarea">
+                            <div class="row">
+                              <div class="col-sm-5 calcareatext">
+                                <h4>Monthly Income <span>67, 000</span></h4>
+                              </div>
+                              <div class="col-sm-5 calcareatext">
+                                <h4>Monthly Expenditure <span>37, 000</span></h4>
+                              </div>
+                              <div class="col-sm-2 calcareatext_2">
+                                <h2>Profit/Loss</h2>
+                                <span>+31, 300</span></div>
+                            </div>
+                          </div>
+                          <div class="control-group">
+                            <div class="noPadding">
+                              <label class="col-sm-3 noPadding control-label">Special records</label>
+                              <div class="controls noPadding col-lg-12">
+                                <textarea class="input-control"></textarea>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="control-group">
+                            <div class="controls noPadding upload-blockitem col-sm-6">
+                              <div class="input-group image-preview">
+                                <input type="text" class="form-control image-preview-filename" disabled="disabled">
+                                <span class="input-group-btn">
+                                <button type="button" class="btn btn-default image-preview-clear" style="display:none;"> <span class="glyphicon glyphicon-remove"></span> Clear </button>
+                                <div class="btn btn-default image-preview-input"> <span class="image-preview-input-title">Upload file</span>
+                                  <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/>
+                                  <!-- rename it --> 
+                                </div>
+                                </span> </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--  End Profit/Loss --> 
+                  <!--  User groups -->
+                  <div class="tab-pane fade" id="usergroup">
+                    <div class="row">
+                      <div class="maintitle">
+                        <h3>User group management</h3>
+                      </div>
+                      <div class="farmBlock">
+                        <div class="col-lg-9">
+                          <div class="row">
+                            <div class="groupcolums">
+                              <div class="col-sm-4">
+                                <h2>Director</h2>
+                                <ol>
+                                  <li>Nulla quis lorem ut libero malesuada feugiat.</li>
+                                  <li>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.</li>
+                                  <li>Sed porttitor lectus nibh. Vestibulum ante ipsum primis in</li>
+                                  <li>Faucibus orci luctus et ultrices posuere cubilia Curae</li>
+                                </ol>
+                              </div>
+                              <div class="col-sm-4">
+                                <h2>Farm manager</h2>
+                                <ol>
+                                  <li>Nulla quis lorem ut libero malesuada feugiat.</li>
+                                  <li>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.</li>
+                                  <li>Sed porttitor lectus nibh. Vestibulum ante ipsum primis in</li>
+                                  <li>Faucibus orci luctus et ultrices posuere cubilia Curae</li>
+                                </ol>
+                              </div>
+                              <div class="col-sm-4">
+                                <h2>Farm Hand</h2>
+                                <ol>
+                                  <li>Nulla quis lorem ut libero malesuada feugiat.</li>
+                                  <li>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.</li>
+                                  <li>Sed porttitor lectus nibh. Vestibulum ante ipsum primis in</li>
+                                  <li>Faucibus orci luctus et ultrices posuere cubilia Curae</li>
+                                </ol>
+                              </div>
+                            </div>
+                            <div class="usertablemgt">
+                              <div class="col-sm-6">
+                                <div class="control-group">
+                                  <div class="noPadding">
+                                    <label class="col-sm-4 noPadding control-label">First Name</label>
+                                    <div class="controls noPadding col-sm-8">
+                                      <input class="input-control" placeholder="" type="text">
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="control-group">
+                                  <div class="noPadding">
+                                    <label class="col-sm-4 noPadding control-label">Number</label>
+                                    <div class="controls noPadding col-sm-8">
+                                      <input class="input-control" placeholder="" type="text">
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="control-group">
+                                  <div class="noPadding">
+                                    <label class="col-sm-4 noPadding control-label">Password</label>
+                                    <div class="controls noPadding col-sm-8">
+                                      <input class="input-control" placeholder="" type="text">
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-sm-6">
+                                <div class="control-group">
+                                  <div class="noPadding">
+                                    <label class="col-sm-4 noPadding control-label">Second Name</label>
+                                    <div class="controls noPadding col-sm-8">
+                                      <input class="input-control" placeholder="" type="text">
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="control-group">
+                                  <div class="noPadding">
+                                    <label class="col-sm-4 noPadding control-label">Email</label>
+                                    <div class="controls noPadding col-sm-8">
+                                      <input class="input-control" placeholder="" type="text">
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="control-group">
+                                  <div class="noPadding">
+                                    <label class="col-sm-4 noPadding control-label">Role</label>
+                                    <div class="controls noPadding col-sm-8">
+                                      <input class="input-control" placeholder="" type="text">
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="control-group">
+                                  <div class="noPadding">
+                                    <label class="col-sm-6 noPadding control-label"></label>
+                                    <div class="controls noPadding col-sm-6">
+                                      <button class="btn btn-noMargin btnBordered">Reset Password</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="tableBlock usertable">
+                              <table class="table table-striped">
+                                <thead>
+                                  <tr>
+                                    <th>Name</th>
+                                    <th>Number/Email</th>
+                                    <th>Role</th>
+                                    <th>Assign</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>Joe Doe Mwangi</td>
+                                    <td>0721 725 371</td>
+                                    <td><select class="input-control" name="state">
+                                        <option value=""> Director </option>
+                                        <option value="">Senior Director </option>
+                                      </select></td>
+                                    <td><button class="btn btn-noMargin btnBordered">Reset Password</button></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Joe Doe Mwangi</td>
+                                    <td>0721 725 371</td>
+                                    <td><select class="input-control" name="state">
+                                        <option value=""> Director </option>
+                                        <option value="">Senior Director </option>
+                                      </select></td>
+                                    <td><button class="btn btn-noMargin btnBordered">Reset Password</button></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Joe Doe Mwangi</td>
+                                    <td>0721 725 371</td>
+                                    <td><select class="input-control" name="state">
+                                        <option value=""> Director </option>
+                                        <option value="">Senior Director </option>
+                                      </select></td>
+                                    <td><button class="btn btn-noMargin btnBordered">Reset Password</button></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Joe Doe Mwangi</td>
+                                    <td>0721 725 371</td>
+                                    <td><select class="input-control" name="state">
+                                        <option value=""> Director </option>
+                                        <option value="">Senior Director </option>
+                                      </select></td>
+                                    <td><button class="btn btn-noMargin btnBordered">Reset Password</button></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Joe Doe Mwangi</td>
+                                    <td>0721 725 371</td>
+                                    <td><select class="input-control" name="state">
+                                        <option value=""> Director </option>
+                                        <option value="">Senior Director </option>
+                                      </select></td>
+                                    <td><button class="btn btn-noMargin btnBordered">Reset Password</button></td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--  End User groups --> 
+                  <!-- end column --> 
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+  <footer class="mainfooter">
+    <div class="container-fluid">
+      <p>EDairy Copyright</p>
+    </div>
+  </footer>
+</div>
+
+<!-- jQuery --> 
+<script src="js/jquery.js"></script> 
+<script src="js/jquery.dataTable.js"></script> 
+<script src="js/main.js"></script> 
+<script>
+//Upload button
+$(document).on('click', '#close-preview', function(){ 
+    $('.image-preview').popover('hide');
+    $('.image-preview').hover(
+        function () {
+           $('.image-preview').popover('show');
+        }, 
+         function () {
+           $('.image-preview').popover('hide');
+        }
+    );    
+});
+
+$(function() {
+    var closebtn = $('<button/>', {
+        type:"button",
+        text: 'x',
+        id: 'close-preview',
+        style: 'font-size: initial;',
+    });
+    closebtn.attr("class","close pull-right");
+    $('.image-preview').popover({
+        trigger:'manual',
+        html:true,
+        title: "<strong>Preview</strong>"+$(closebtn)[0].outerHTML,
+        content: "There's no image",
+        placement:'bottom'
+    });
+    $('.image-preview-clear').click(function(){
+        $('.image-preview').attr("data-content","").popover('hide');
+        $('.image-preview-filename').val("");
+        $('.image-preview-clear').hide();
+        $('.image-preview-input input:file').val("");
+        $(".image-preview-input-title").text("Browse"); 
+    }); 
+    $(".image-preview-input input:file").change(function (){     
+        var img = $('<img/>', {
+            id: 'dynamic',
+            width:250,
+            height:200
+        });      
+        var file = this.files[0];
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            $(".image-preview-input-title").text("Change");
+            $(".image-preview-clear").show();
+            $(".image-preview-filename").val(file.name);            
+            img.attr('src', e.target.result);
+            $(".image-preview").attr("data-content",$(img)[0].outerHTML).popover("show");
+        }        
+        reader.readAsDataURL(file);
+}); 
+}); 
+</script>
+</body>
+</html>
